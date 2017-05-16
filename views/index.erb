@@ -1,0 +1,23 @@
+<h1>Contacts</h1>
+
+<ul>
+  <% @contacts.each do |contact| %>
+    <li><%= contact.name %> - <%= contact.phone_number %></li>
+  <% end %>
+</ul>
+
+<a href="/contacts?page=<%= @next_page%>">Next Page</a>
+
+
+<h2>Search for a Contact</h2>
+<form action="/contacts" method="post">
+  First Name:
+  <input type="search" name="first_name">
+  Last Name:
+  <input type="search" name="last_name">
+  <input type="submit">
+</form>
+
+<h2><a href="/contacts/submit">Click Here to Add a Contact</a></h2>
+
+<!-- Not sure how to add pagination  -->
